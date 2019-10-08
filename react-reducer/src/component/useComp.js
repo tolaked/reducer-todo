@@ -6,7 +6,7 @@ function useComp() {
 
   return (
     <div>
-      {todo.map((el, index) => (
+      {todo.todos.map((el, index) => (
         <h3 key={index}>{el.item}</h3>
       ))}
     </div>
