@@ -1,12 +1,12 @@
 import React, { useReducer } from "react";
+import uuid from "uuid";
 
 const ADD = "ADD";
 
 export const initialState = {
-  counter: 2,
   todos: [
     {
-      item: "Learn about reducers",
+      text: "Learn about reducers",
       completed: false,
       id: 3892987589
     }
@@ -15,14 +15,13 @@ export const initialState = {
 
 export function reducer(state, action) {
   switch (action.type) {
-    case ADD: {
-      const newCounter = state.counter + 1;
+    case "add": {
+      //   const newCounter = state.counter + 1;
       const newTodo = {
-        item: action.text,
-        id: newCounter
+        text: action.text,
+        id: uuid()
       };
       return {
-        newCounter,
         todos: [...state.todos, newTodo]
       };
     }
